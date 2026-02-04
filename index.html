@@ -6,6 +6,10 @@
     
     <title>Primavita | Indústria de Produtos para Prótese Dentária em SP</title>
     
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    
     <meta name="description" content="Indústria Primavita: Referência em produtos odontológicos em Leme, SP. Fabricante de dentes acrílicos, resinas, blocos CAD/CAM e kits de caracterização. Qualidade e precisão para laboratórios de prótese.">
     
     <meta name="keywords" content="Primavita, indústria dentária, prótese dentária, dentes acrílicos, resina acrílica, blocos cad cam, produtos odontológicos, Leme SP, material para protético">
@@ -1199,7 +1203,8 @@
                 const tl = gsap.timeline();
 
                 // 1. Carrega a barra (Logo já está visível sobre a malha)
-                tl.to("#loader-bar", { width: "100%", duration: 1.5, ease: "power2.inOut" })
+                // Alterado para 1 segundo conforme solicitado
+                tl.to("#loader-bar", { width: "100%", duration: 1, ease: "power2.inOut" })
                   
                   // 2. Some com o loader suavemente
                   .to("#loader", { opacity: 0, duration: 0.8, ease: "power2.inOut", onComplete: () => {
@@ -1252,9 +1257,7 @@
     </script>
 
 
-       <!-- Tags do google sempre ao final da página -->
-
-    <script>
+       <script>
 
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
