@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="antialiased">
- <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
@@ -709,7 +709,18 @@
         const productsData = {
             blocos: [
                 { name: "Bloco Nano Híbrido", desc: "Compósito durável com tecnologia de preenchimento densa para CAD/CAM.", price: "R$ 650,00", img: "/img/blocos/Bloco_Nano_Híbrido.png" },
-                { name: "Bloco PMMA", desc: "Bloco de resina acrílica para provisórios, modelos e guias cirúrgicas.", price: "R$ 300,00", img: "/img/blocos/Bloco_PMMA.jpeg" }
+                { 
+                    name: "Bloco PMMA", 
+                    desc: "Bloco de resina acrílica para provisórios, modelos e guias cirúrgicas.", 
+                    price: "Sob consulta", 
+                    isCarousel: true,
+                    images: [
+                        "/img/blocos/Bloco_PMMA.jpeg",
+                        "/img/blocos/PMMA-2 (1).jpeg",
+                        "/img/blocos/PMMA-2 (2).jpeg"
+                    ],
+                    img: "/img/blocos/Bloco_PMMA.jpeg" 
+                }
             ],
             resinas: [
                 { name: "Resina Acrílica Autopolimerizável", desc: "Resina de cura rápida ideal para reparos, reembasamentos e fixação de dentes.", price: "R$ 25,00 - R$ 440,00", img: "/img/Resinas/Resina_Acrílica_Autopolimerizável.png" },
@@ -1208,13 +1219,4 @@
 
 
 </body>
-
-
 </html>
-
-
-
-
-
-
-
