@@ -210,14 +210,7 @@
         .custom-scroll::-webkit-scrollbar-thumb { background: #38bdf8; border-radius: 3px; }
 
         /* Carousel Animation */
-        @keyframes fadeImage {
-            0% { opacity: 0; }
-            5% { opacity: 1; }
-            33% { opacity: 1; }
-            38% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-        .animate-carousel { animation: fadeImage 9s infinite; }
+        .carousel-img { transition: opacity 0.8s ease-in-out; }
         
         /* Pulse Animation */
         @keyframes pulse-green {
@@ -708,7 +701,17 @@
         // ----------------------------------------------------
         const productsData = {
             blocos: [
-                { name: "Bloco Nano Híbrido", desc: "Compósito durável com tecnologia de preenchimento densa para CAD/CAM.", price: "R$ 650,00", img: "/img/blocos/Bloco_Nano_Híbrido.png" },
+                { 
+                    name: "Bloco Nano Híbrido", 
+                    desc: "Compósito durável com tecnologia de preenchimento densa para CAD/CAM.", 
+                    price: "R$ 650,00", 
+                    isCarousel: true,
+                    images: [
+                        "/img/blocos/Bloco_Nano_Híbrido.png",
+                        "/img/blocos/PMMA-2 (1).jpeg"
+                    ],
+                    img: "/img/blocos/Bloco_Nano_Híbrido.png" 
+                },
                 { 
                     name: "Bloco PMMA", 
                     desc: "Bloco de resina acrílica para provisórios, modelos e guias cirúrgicas.", 
@@ -716,7 +719,6 @@
                     isCarousel: true,
                     images: [
                         "/img/blocos/Bloco_PMMA.jpeg",
-                        "/img/blocos/PMMA-2 (1).jpeg",
                         "/img/blocos/PMMA-2 (2).jpeg"
                     ],
                     img: "/img/blocos/Bloco_PMMA.jpeg" 
@@ -806,12 +808,10 @@
                     const fallbackUrl = 'https://placehold.co/100x100/333/fff?text=PRODUTO';
 
                     if (item.isCarousel && item.images) {
-                        // Lógica do Carrossel (Fade com CSS Animation)
-                        imageHTML = `<div class="w-full h-full relative">`;
+                        const carouselId = `carousel-${category}-${index}`;
+                        imageHTML = `<div class="w-full h-full relative" id="${carouselId}">`;
                         item.images.forEach((imgSrc, i) => {
-                            // Delay escalonado: 0s, 3s, 6s... para ciclo total de 9s
-                            const delay = i * 3; 
-                            imageHTML += `<img src="${imgSrc}" class="absolute inset-0 w-full h-full object-cover animate-carousel" style="animation-delay: ${delay}s" alt="${item.name}" onerror="this.src='${fallbackUrl}'; this.onerror=null;">`;
+                            imageHTML += `<img src="${imgSrc}" class="carousel-img absolute inset-0 w-full h-full object-cover" style="opacity:${i === 0 ? 1 : 0};" alt="${item.name}" onerror="this.src='${fallbackUrl}'; this.onerror=null;">`;
                         });
                         imageHTML += `</div>`;
                     } else {
@@ -843,6 +843,25 @@
                         </div>
                     `;
                     list.innerHTML += html;
+                });
+
+                // Iniciar carrosséis JS (sem bug de tela preta)
+                if (window._carouselIntervals) window._carouselIntervals.forEach(clearInterval);
+                window._carouselIntervals = [];
+                items.forEach((item, idx) => {
+                    if (item.isCarousel && item.images && item.images.length > 1) {
+                        const carouselId = `carousel-${category}-${idx}`;
+                        const el = document.getElementById(carouselId);
+                        if (!el) return;
+                        const imgs = el.querySelectorAll('img');
+                        let current = 0;
+                        const iid = setInterval(() => {
+                            imgs[current].style.opacity = '0';
+                            current = (current + 1) % imgs.length;
+                            imgs[current].style.opacity = '1';
+                        }, 3000);
+                        window._carouselIntervals.push(iid);
+                    }
                 });
             }
 
