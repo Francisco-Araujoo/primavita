@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="antialiased">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Primavita | Atendimento</title>
+
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+
+  <meta name="description" content="Primavita Indústria - Atendimento comercial. Converse com nossa equipe de especialistas." />
+  <meta name="robots" content="noindex, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Primavita | Atendimento" />
+  <meta property="og:description" content="Converse agora com um especialista Primavita." />
+  <meta property="og:image" content="https://industriaprimavita.com.br/img/social-share.jpg" />
+  <meta property="og:url" content="https://industriaprimavita.com.br/whatsapp" />
+  <meta property="og:site_name" content="Primavita Indústria" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Primavita | Atendimento" />
+  <meta name="twitter:description" content="Converse agora com um especialista Primavita." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { dark: '#050505', blue: '#38bdf8', light: '#e2e8f0', accent: '#0ea5e9' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #050505;
+      color: #fff;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    #canvas-container {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .logo {
+      height: 120px;
+      width: auto;
+      object-fit: contain;
+      margin: 0 auto 2rem;
+      filter: brightness(0) invert(1);
+    }
+
+    @media (max-width: 640px) {
+      .logo { height: 90px; margin-bottom: 1.5rem; }
+    }
+
+    .dots span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #38bdf8;
+      border-radius: 50%;
+      margin: 0 4px;
+      animation: dot 1.4s ease-in-out infinite both;
+    }
+    .dots span:nth-child(1) { animation-delay: -0.32s; }
+    .dots span:nth-child(2) { animation-delay: -0.16s; }
+    .dots span:nth-child(3) { animation-delay: 0s; }
+
+    @keyframes dot {
+      0%, 80%, 100% { transform: scale(0.4); opacity: 0.4; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+
+    .pulse-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid rgba(56, 189, 248, 0.3);
+      animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+    .fade-up:nth-child(1) { animation-delay: 0.1s; }
+    .fade-up:nth-child(2) { animation-delay: 0.3s; }
+    .fade-up:nth-child(3) { animation-delay: 0.5s; }
+    .fade-up:nth-child(4) { animation-delay: 0.7s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .status-bar {
+      width: 100%;
+      max-width: 280px;
+      height: 2px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 2px;
+      margin: 1.5rem auto 0;
+      overflow: hidden;
+    }
+
+    .status-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #38bdf8, #0ea5e9, #38bdf8);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s ease infinite;
+      border-radius: 2px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .whatsapp-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      position: relative;
+    }
+
+    .whatsapp-icon svg { width: 32px; height: 32px; fill: white; }
+
+    .vendedor-tag {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.35rem 1rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: #38bdf8;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .vendedor-tag.show { opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <div id="canvas-container"></div>
+
+  <div class="content">
+    <img src="/img/logo.png" alt="Primavita" class="logo" onerror="this.style.display='none'; document.getElementById('fallback-logo').classList.remove('hidden')" />
+
+    <div id="fallback-logo" class="hidden items-center justify-center gap-3 mb-8">
+      <div class="w-14 h-14 bg-white text-black flex items-center justify-center font-black text-3xl rounded-sm">P</div>
+      <span class="font-display font-bold tracking-widest text-3xl text-white">PRIMAVITA</span>
+    </div>
+
+    <div class="whatsapp-icon">
+      <div class="pulse-ring"></div>
+      <svg viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.9.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+    </div>
+
+    <h1 class="fade-up font-display font-bold text-xl sm:text-2xl text-white mb-2">
+      Conectando você ao<br />especialista Primavita
+    </h1>
+
+    <p class="fade-up text-gray-400 text-sm sm:text-base font-light mb-4">
+      Aguarde enquanto preparamos seu atendimento
+    </p>
+
+    <div class="fade-up dots mb-2">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="fade-up status-bar">
+      <div class="status-bar-fill" id="progress-bar"></div>
+    </div>
+
+    <div class="vendedor-tag" id="vendedor-tag">
+      Atendente: <span id="vendedor-nome"></span>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <script>
+    const vendedores = [
+      { nome: "Drielly", numero: "5519999978400" },
+      { nome: "Igor", numero: "5519999979039" },
+      { nome: "Mayara", numero: "5519999746897" },
+      { nome: "Michael", numero: "5519996820561" },
+      { nome: "Renata", numero: "5519999564955" },
+    ];
+
+    (function() {
+      const canvasContainer = document.getElementById('canvas-container');
+      if (canvasContainer && typeof THREE !== 'undefined') {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        canvasContainer.appendChild(renderer.domElement);
+
+        const isMobile = window.innerWidth < 768;
+        const hexRadius = isMobile ? 14 : 18;
+        const hexGap = 2;
+        const rows = isMobile ? 16 : 24;
+        const cols = isMobile ? 20 : 36;
+
+        const group = new THREE.Group();
+        const hexShape = new THREE.Shape();
+        for (let i = 0; i < 6; i++) {
+          const angle = (i * 60 * Math.PI) / 180;
+          const x = hexRadius * Math.cos(angle);
+          const y = hexRadius * Math.sin(angle);
+          if (i === 0) hexShape.moveTo(x, y);
+          else hexShape.lineTo(x, y);
+        }
+        hexShape.closePath();
+
+        const geometry = new THREE.BufferGeometry().setFromPoints(hexShape.getPoints());
+        const material = new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.12 });
+        const hexagons = [];
+
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < cols; c++) {
+            const xOffset = c * (hexRadius * 1.5 + hexGap) - (cols * hexRadius * 1.5) / 2;
+            const yOffset = r * (hexRadius * Math.sqrt(3) + hexGap) - (rows * hexRadius * Math.sqrt(3)) / 2;
+            const finalY = c % 2 === 0 ? yOffset : yOffset + (hexRadius * Math.sqrt(3)) / 2;
+            const hex = new THREE.Line(geometry, material.clone());
+            hex.position.set(xOffset, finalY, 0);
+            hex.material.opacity = 0.05 + Math.random() * 0.1;
+            group.add(hex);
+            hexagons.push(hex);
+          }
+        }
+
+        group.rotation.x = 0.6;
+        group.position.z = -100;
+        scene.add(group);
+        camera.position.z = 200;
+
+        const clock = new THREE.Clock();
+        function animateScene() {
+          requestAnimationFrame(animateScene);
+          const time = clock.getElapsedTime();
+          group.rotation.z = Math.sin(time * 0.03) * 0.03;
+          hexagons.forEach((hex, i) => {
+            const wave = Math.sin(i * 0.01 + time) * 3;
+            hex.position.z += (wave - hex.position.z) * 0.05;
+          });
+          renderer.render(scene, camera);
+        }
+        animateScene();
+
+        window.addEventListener('resize', () => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+      }
+
+      const STORAGE_KEY = 'primavita_rodizio';
+
+      function getProximoVendedor() {
+        let index = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+        const vendedor = vendedores[index % vendedores.length];
+        localStorage.setItem(STORAGE_KEY, String(index + 1));
+        return vendedor;
+      }
+
+      const bar = document.getElementById('progress-bar');
+      const tag = document.getElementById('vendedor-tag');
+      const nome = document.getElementById('vendedor-nome');
+
+      let width = 0;
+      const duration = 2000;
+      const interval = 30;
+      const step = (interval / duration) * 100;
+
+      const timer = setInterval(function() {
+        width += step;
+        if (width >= 95) {
+          width = 95;
+          clearInterval(timer);
+
+          const vendedor = getProximoVendedor();
+
+          nome.textContent = vendedor.nome;
+          tag.classList.add('show');
+
+          setTimeout(function() {
+            bar.style.width = '100%';
+          }, 400);
+
+          setTimeout(function() {
+            const texto = encodeURIComponent('Olá vim através do facebook');
+            window.location.href = 'https://wa.me/' + vendedor.numero + '?text=' + texto;
+          }, 1200);
+        }
+        bar.style.width = Math.min(width, 95) + '%';
+      }, interval);
+    })();
+  </script>
+
+</body>
+</html>
