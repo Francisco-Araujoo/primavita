@@ -1,271 +1,306 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesquisa de Mercado: CAD/CAM Odontológico Brasil</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        :root {
-            --google-blue: #4285f4;
-            --google-header-purple: #673ab7;
-            --bg-color: #f0ebf8;
-            --card-bg: #ffffff;
-            --text-main: #202124;
-            --text-secondary: #70757a;
-            --border-color: #dadce0;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            width: 100%;
-            max-width: 770px;
-            background-color: var(--google-header-purple);
-            height: 10px;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-            margin-top: 12px;
-        }
-
-        .main-container {
-            width: 100%;
-            max-width: 770px;
-            margin-bottom: 24px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 24px;
-            margin-bottom: 12px;
-            box-shadow: 0 1px 2px rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
-        }
-
-        .title-card {
-            border-top: none;
-        }
-
-        h1 {
-            font-size: 32px;
-            font-weight: 400;
-            margin: 0 0 12px 0;
-        }
-
-        h2 {
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 16px;
-            color: var(--text-main);
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-        }
-
-        .question-block {
-            margin-bottom: 24px;
-        }
-
-        .question-text {
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-
-        .answer-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            padding: 8px;
-            background: #f8f9fa;
-            border-radius: 4px;
-        }
-
-        .rank-badge {
-            background: var(--google-header-purple);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 12px;
-            margin-right: 12px;
-            min-width: 40px;
-            text-align: center;
-        }
-
-        .price-tag {
-            margin-left: auto;
-            font-weight: 700;
-            color: #1e8e3e;
-        }
-
-        canvas {
-            max-height: 250px;
-            margin-top: 20px;
-        }
-
-        .footer-note {
-            font-size: 12px;
-            color: var(--text-secondary);
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pesquisa de Mercado: CAD/CAM Odontológico Brasil — Interativo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root{
+      --google-blue:#4285f4; --google-purple:#673ab7; --bg:#f0ebf8;
+      --card:#fff; --muted:#70757a; --text:#202124; --border:#dadce0;
+    }
+    body{font-family:Roboto, system-ui, -apple-system, Arial; background:var(--bg); color:var(--text); margin:0; display:flex; justify-content:center; padding:18px;}
+    .wrap{width:100%;max-width:980px;}
+    header{height:10px;background:var(--google-purple);border-radius:8px 8px 0 0}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:8px; padding:18px; box-shadow:0 1px 3px rgba(60,64,67,0.12); margin-top:12px;}
+    h1{margin:0 0 8px;font-weight:400;font-size:22px}
+    .muted{color:var(--muted);font-size:13px}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .select, .checkbox{padding:8px;border:1px solid var(--border);border-radius:6px;background:#fff}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:12px;margin-top:12px}
+    .list{display:flex;flex-direction:column;gap:8px}
+    .badge{background:var(--google-purple);color:white;padding:4px 8px;border-radius:12px;font-size:12px}
+    .answer-item{display:flex;align-items:center;gap:12px;padding:8px;background:#f8f9fa;border-radius:6px}
+    .price{margin-left:auto;font-weight:700;color:#1e8e3e}
+    canvas{width:100%!important;height:220px!important}
+    @media(max-width:860px){ .grid{grid-template-columns:1fr} .filters{flex-direction:column} }
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <header></header>
 
-<header></header>
-
-<div class="main-container">
-    <!-- Título Principal -->
-    <div class="card title-card">
-        <h1>Relatório de Mercado CAD/CAM Odontológico</h1>
-        <p>Dados consolidados sobre fresadoras, insumos e materiais (Brasil 2025-2026).</p>
-        <p style="font-size: 14px; color: var(--text-secondary);">*Valores e rankings baseados nas informações fornecidas.</p>
-    </div>
-
-    <!-- Seção 1: Fresadoras -->
     <div class="card">
-        <h2>1. Equipamentos: Fresadoras</h2>
-        
-        <div class="question-block">
-            <div class="question-text">Quais as melhores fresadoras (Performance)?</div>
-            <div class="answer-item"><span class="rank-badge">1º</span> UP CERA / XT CERA (Talmax)</div>
-            <div class="answer-item"><span class="rank-badge">2º</span> Marca Talmax (outros modelos)</div>
+      <h1>Relatório Interativo — CAD/CAM Odontológico (Brasil)</h1>
+      <div class="muted">Use os filtros para ajustar os gráficos e valores. Valores em BRL.</div>
+
+      <div class="filters">
+        <div>
+          <label class="muted">Categoria:</label><br/>
+          <select id="filterCategory" class="select" aria-label="Categoria">
+            <option value="all">Todas</option>
+            <option value="fresadoras">Fresadoras</option>
+            <option value="fresas">Fresas</option>
+            <option value="dissilicato">Dissilicato</option>
+            <option value="zirconia">Zircônia</option>
+            <option value="china">Compra Direta China</option>
+          </select>
         </div>
 
-        <div class="question-block">
-            <div class="question-text">Quais as fresadoras mais baratas (Entrada)?</div>
-            <div class="answer-item"><span class="rank-badge">1º</span> PHILDEN</div>
-            <div class="answer-item"><span class="rank-badge">2º</span> UP3D - PS3 / IMES-ICORE</div>
+        <div>
+          <label class="muted">Faixa de preço:</label><br/>
+          <select id="filterPriceRange" class="select" aria-label="Faixa de preço">
+            <option value="both">Entrada + Premium</option>
+            <option value="entry">Apenas Entrada</option>
+            <option value="premium">Apenas Premium</option>
+          </select>
         </div>
 
-        <div style="height: 300px;">
-            <canvas id="chartFresadoras"></canvas>
+        <div>
+          <label class="muted">Fonte de valores:</label><br/>
+          <select id="filterSource" class="select" aria-label="Fonte">
+            <option value="br">Mercado Brasil</option>
+            <option value="china">Compra Direta China (Pessoa Física)</option>
+          </select>
         </div>
+
+        <div>
+          <label class="muted">Mostrar tabela resumo:</label><br/>
+          <input type="checkbox" id="toggleSummary" class="checkbox" checked /> 
+        </div>
+      </div>
     </div>
 
-    <!-- Seção 2: Médias de Valores -->
-    <div class="card">
-        <h2>2. Médias Suportadas (Brasil)</h2>
-        <div class="question-block">
-            <div class="question-text">Média de valor das Fresadoras</div>
-            <div class="answer-item">Melhores/Mais Caras <span class="price-tag">R$ 360.000 - R$ 450.000</span></div>
-            <div class="answer-item">Modelos de Entrada (Mais Baratas) <span class="price-tag">R$ 200.000 - R$ 250.000</span></div>
-        </div>
-    </div>
+    <div class="grid">
+      <div class="card" id="mainCard">
+        <!-- Dynamic content area -->
+        <div id="contentArea">
+          <!-- Fresadoras -->
+          <h2 style="margin-top:0">1. Equipamentos: Fresadoras</h2>
 
-    <!-- Seção 3: Insumos - Fresas -->
-    <div class="card">
-        <h2>3. Consumíveis: Fresas</h2>
-        <div class="answer-item">Mais Utilizada: <strong>Odontomega / Original</strong></div>
-        <div class="answer-item">Fresa mais cara (Sirona): <span class="price-tag">R$ 2.700,00</span></div>
-        <div class="answer-item">Média das baratas: <span class="price-tag">R$ 250,00</span></div>
-    </div>
+          <div class="list" id="fresadorasList">
+            <div class="answer-item"><span class="badge">1º</span> UP CERA / XT CERA (Talmax) <span class="price">R$ 360.000 - R$ 450.000</span></div>
+            <div class="answer-item"><span class="badge">2º</span> Marca Talmax (outros modelos) <span class="price">R$ 360.000 - R$ 450.000</span></div>
+            <div class="answer-item"><span class="badge">Entrada</span> PHILDEN / UP3D - PS3 / IMES-ICORE <span class="price">R$ 200.000 - R$ 250.000</span></div>
+          </div>
 
-    <!-- Seção 4: Dissilicato -->
-    <div class="card">
-        <h2>4. Material: Dissilicato de Lítio</h2>
-        <div class="question-block">
-            <div class="question-text">Ranking de Marcas</div>
-            <div class="answer-item"><span class="rank-badge">1º</span> E-max (Ivoclar)</div>
-            <div class="answer-item"><span class="rank-badge">2º</span> Rosetta</div>
-            <div class="answer-item">Opção Econômica: Talmax / Kota</div>
-        </div>
-        
-        <canvas id="chartDissilicato"></canvas>
-        
-        <div class="question-block" style="margin-top:20px;">
-            <div class="answer-item">Valores mais caros: <span class="price-tag">R$ 490 - R$ 600</span></div>
-            <div class="answer-item">Valores mais baratos: <span class="price-tag">R$ 190 - R$ 220</span></div>
-        </div>
-    </div>
+          <canvas id="chartMain"></canvas>
 
-    <!-- Seção 5: Zircônia -->
-    <div class="card">
-        <h2>5. Material: Zircônia</h2>
-        <div class="question-block">
-            <div class="answer-item">Mais utilizadas: <strong>Talmax / Bapex</strong></div>
-            <div class="answer-item">Marcas Premium: <strong>Ivoclar / Katana / Prettau</strong></div>
+          <!-- Dissilicato & Zircônia quick -->
+          <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap">
+            <div style="flex:1;min-width:220px">
+              <h3 style="margin:6px 0">Dissilicato</h3>
+              <div class="answer-item">1º E-max (Ivoclar) <span class="price">R$ 490 - R$ 600 (premium)</span></div>
+              <div class="answer-item">2º Rosetta <span class="price">R$ 190 - R$ 220 (entrada)</span></div>
+            </div>
+            <div style="flex:1;min-width:220px">
+              <h3 style="margin:6px 0">Zircônia</h3>
+              <div class="answer-item">Mais usadas: Talmax / Bapex <span class="price">R$ 450 - R$ 600 (média)</span></div>
+              <div class="answer-item">Premium: Ivoclar / Katana / Prettau <span class="price">R$ 800 - R$ 1.250</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Resumo & Observações</h3>
+        <div id="summaryTable">
+          <div class="answer-item"><strong>Média Fresadoras (Premium)</strong> <span class="price" id="avgFresadoras">R$ 360.000 - R$ 450.000</span></div>
+          <div class="answer-item"><strong>Média Fresadoras (Entrada)</strong> <span class="price" id="avgFresadorasEntry">R$ 200.000 - R$ 250.000</span></div>
+          <div class="answer-item"><strong>Valor Fresa (média)</strong> <span class="price" id="avgFresa">R$ 250,00</span></div>
+          <div class="answer-item"><strong>Valor Dissilicato (média)</strong> <span class="price" id="avgDiss">R$ 190 - R$ 600</span></div>
+          <div class="answer-item"><strong>Valor Zircônia (média)</strong> <span class="price" id="avgZirc">R$ 450 - R$ 1.250</span></div>
         </div>
 
-        <div class="question-block">
-            <div class="question-text">Custos por Unidade/Disco</div>
-            <div class="answer-item">Mais Caras (Premium): <span class="price-tag">R$ 800 - R$ 1.250</span></div>
-            <div class="answer-item">Média das Baratas: <span class="price-tag">R$ 450 - R$ 600</span></div>
-        </div>
+        <hr style="margin:12px 0" />
+        <h4>Compra Direta China (Pessoa Física)</h4>
+        <div class="answer-item">Fresa: <span class="price" id="chinaFresa">R$ 85 - R$ 120</span></div>
+        <div class="answer-item">Dissilicato (caixa): <span class="price" id="chinaDiss">R$ 93 - R$ 120</span></div>
+        <div class="answer-item">Zircônia (disco): <span class="price" id="chinaZirc">R$ 249 - R$ 350</span></div>
+        <p class="muted" style="margin-top:8px">Observação: valores para importação pessoa física podem não incluir frete, impostos ou variações cambiais.</p>
+      </div>
     </div>
-
-    <!-- Nova Seção: Observações de Compra Direta -->
-    <div class="card">
-        <h2>Observação — Compra direta da China (Pessoa Física)</h2>
-        <div class="question-block">
-            <div class="answer-item">Média de Preço de Fresa: <span class="price-tag">R$ 85,00 - R$ 120,00</span></div>
-            <div class="answer-item">Média de Preço de Dissilicato (caixa): <span class="price-tag">R$ 93,00 - R$ 120,00</span></div>
-            <div class="answer-item">Média de Preço de Zircônia (disco): <span class="price-tag">R$ 249,00 - R$ 350,00</span></div>
-        </div>
-        <p style="font-size:13px; color:var(--text-secondary); margin-top:8px;">
-            Valores estimados para compras diretas (importação pessoa física) e podem não incluir frete, taxas alfandegárias ou variações cambiais.
-        </p>
-    </div>
-
-    <div class="footer-note">
-        Relatório gerado com base nas respostas fornecidas. Use como referência ilustrativa para decisões iniciais de compra.
-    </div>
-</div>
+  </div>
 
 <script>
-    // Gráfico Fresadoras
-    const ctx1 = document.getElementById('chartFresadoras').getContext('2d');
-    new Chart(ctx1, {
-        type: 'bar',
-        data: {
-            labels: ['Mais Baratas (Entrada)', 'Melhores (Premium)'],
-            datasets: [{
-                label: 'Faixa de Preço (R$ em Milhares)',
-                data: [225, 405],
-                backgroundColor: ['#4285f4', '#673ab7'],
-                borderRadius: 5
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: { y: { beginAtZero: true, title: { display: true, text: 'R$ (Mil)' } } }
-        }
+  // Data model (based on user-provided numbers)
+  const dataModel = {
+    fresadoras: {
+      premium: { min:360000, max:450000, display:'R$ 360.000 - R$ 450.000' },
+      entry: { min:200000, max:250000, display:'R$ 200.000 - R$ 250.000' }
+    },
+    fresas: {
+      marketAvg: { min:250, max:250, display:'R$ 250,00' },
+      chinaAvg: { min:85, max:120, display:'R$ 85 - R$ 120' },
+      mostUsed: ['Odontomega','Original','Outras']
+    },
+    dissilicato: {
+      premium: { min:490, max:600, display:'R$ 490 - R$ 600' },
+      entry: { min:190, max:220, display:'R$ 190 - R$ 220' },
+      chinaAvg: { min:93, max:120, display:'R$ 93 - R$ 120' }
+    },
+    zirconia: {
+      premium: { min:800, max:1250, display:'R$ 800 - R$ 1.250' },
+      entry: { min:450, max:600, display:'R$ 450 - R$ 600' },
+      chinaAvg: { min:249, max:350, display:'R$ 249 - R$ 350' }
+    }
+  };
+
+  // Chart instance
+  let mainChart = null;
+
+  function createChart(mode='both', source='br'){
+    const ctx = document.getElementById('chartMain').getContext('2d');
+    if(mainChart) mainChart.destroy();
+
+    // Build dataset depending on mode and source
+    let labels = [], values = [], colors = [];
+    if(mode === 'entry' || mode === 'both'){
+      labels.push('Entrada (Fresadoras)'); values.push((dataModel.fresadoras.entry.min + dataModel.fresadoras.entry.max)/2/1000); colors.push('#4285f4');
+    }
+    if(mode === 'premium' || mode === 'both'){
+      labels.push('Premium (Fresadoras)'); values.push((dataModel.fresadoras.premium.min + dataModel.fresadoras.premium.max)/2/1000); colors.push('#673ab7');
+    }
+
+    // If source is china, scale using china averages for consumables (visual cue)
+    const dataset = {
+      labels,
+      datasets:[{
+        label:'Faixa média (R$ em milhares)',
+        data:values,
+        backgroundColor:colors,
+        borderRadius:6
+      }]
+    };
+
+    mainChart = new Chart(ctx, {
+      type:'bar',
+      data:dataset,
+      options:{responsive:true,maintainAspectRatio:false,scales:{y:{beginAtZero:true,title:{display:true,text:'R$ (mil)'}}}}
     });
 
-    // Gráfico Dissilicato
-    const ctx2 = document.getElementById('chartDissilicato').getContext('2d');
-    new Chart(ctx2, {
-        type: 'line',
-        data: {
-            labels: ['Entrada (Talmax/Kota)', 'Média Mercado', 'Premium (E-max)'],
-            datasets: [{
-                label: 'Preço por Bloco (R$)',
-                data: [205, 350, 545],
-                borderColor: '#1e8e3e',
-                backgroundColor: 'rgba(30, 142, 62, 0.1)',
-                fill: true,
-                tension: 0.4
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
+    updateSummaryDisplay(source);
+  }
+
+  function updateSummaryDisplay(source){
+    // Update summary text based on source
+    document.getElementById('avgFresadoras').textContent = dataModel.fresadoras.premium.display;
+    document.getElementById('avgFresadorasEntry').textContent = dataModel.fresadoras.entry.display;
+    document.getElementById('avgFresa').textContent = (source==='china') ? dataModel.fresas.chinaAvg.display : dataModel.fresas.marketAvg.display;
+    document.getElementById('avgDiss').textContent = (source==='china') ? dataModel.dissilicato.chinaAvg.display : `${dataModel.dissilicato.entry.display} / ${dataModel.dissilicato.premium.display}`;
+    document.getElementById('avgZirc').textContent = (source==='china') ? dataModel.zirconia.chinaAvg.display : `${dataModel.zirconia.entry.display} / ${dataModel.zirconia.premium.display}`;
+
+    // Update China quick values
+    document.getElementById('chinaFresa').textContent = dataModel.fresas.chinaAvg.display;
+    document.getElementById('chinaDiss').textContent = dataModel.dissilicato.chinaAvg.display;
+    document.getElementById('chinaZirc').textContent = dataModel.zirconia.chinaAvg.display;
+  }
+
+  // Event handlers
+  document.getElementById('filterPriceRange').addEventListener('change', (e)=>{
+    const val = e.target.value;
+    createChart(val, document.getElementById('filterSource').value);
+  });
+
+  document.getElementById('filterSource').addEventListener('change', (e)=>{
+    const source = e.target.value;
+    updateSummaryDisplay(source);
+  });
+
+  document.getElementById('filterCategory').addEventListener('change', (e)=>{
+    const cat = e.target.value;
+    // Show/hide sections accordingly
+    const fresList = document.getElementById('fresadorasList');
+    const contentArea = document.getElementById('contentArea');
+    if(cat === 'all'){
+      // show all (default content already present)
+      fresList.style.display = 'flex';
+      contentArea.querySelectorAll('h3, .answer-item').forEach(el=>el.style.display='flex');
+    } else if(cat === 'fresadoras'){
+      fresList.style.display = 'flex';
+      contentArea.querySelectorAll('h3').forEach(h=>h.style.display='none');
+      contentArea.querySelectorAll('.answer-item').forEach(a=>{ if(a.parentElement.id==='fresadorasList') a.style.display='flex'; else a.style.display='none'; });
+    } else if(cat === 'fresas'){
+      fresList.style.display = 'none';
+      contentArea.querySelectorAll('h3').forEach(h=>h.style.display='none');
+      // show only fresas (we'll create dynamic display)
+      contentArea.innerHTML = `<h2 style="margin-top:0">Fresas</h2>
+        <div class="answer-item">Mais utilizadas: <span style="margin-left:8px">Odontomega / Original / Outras</span></div>
+        <div class="answer-item">Média (Mercado): <span class="price">${dataModel.fresas.marketAvg.display}</span></div>
+        <div class="answer-item">Média (China): <span class="price">${dataModel.fresas.chinaAvg.display}</span></div>
+        <canvas id="chartMain"></canvas>`;
+      createChart(document.getElementById('filterPriceRange').value, document.getElementById('filterSource').value);
+      return;
+    } else if(cat === 'dissilicato'){
+      fresList.style.display = 'none';
+      contentArea.innerHTML = `<h2 style="margin-top:0">Dissilicato</h2>
+        <div class="answer-item">Marcas: E-max (Ivoclar) / Rosetta / Talmax / Kota</div>
+        <div class="answer-item">Entrada: <span class="price">${dataModel.dissilicato.entry.display}</span></div>
+        <div class="answer-item">Premium: <span class="price">${dataModel.dissilicato.premium.display}</span></div>
+        <div class="answer-item">China (caixa): <span class="price">${dataModel.dissilicato.chinaAvg.display}</span></div>
+        <canvas id="chartMain"></canvas>`;
+      createChart(document.getElementById('filterPriceRange').value, document.getElementById('filterSource').value);
+      return;
+    } else if(cat === 'zirconia'){
+      fresList.style.display = 'none';
+      contentArea.innerHTML = `<h2 style="margin-top:0">Zircônia</h2>
+        <div class="answer-item">Marcas: Talmax / Bapex / Ivoclar / Katana / Prettau</div>
+        <div class="answer-item">Média (entrada): <span class="price">${dataModel.zirconia.entry.display}</span></div>
+        <div class="answer-item">Premium: <span class="price">${dataModel.zirconia.premium.display}</span></div>
+        <div class="answer-item">China (disco): <span class="price">${dataModel.zirconia.chinaAvg.display}</span></div>
+        <canvas id="chartMain"></canvas>`;
+      createChart(document.getElementById('filterPriceRange').value, document.getElementById('filterSource').value);
+      return;
+    } else if(cat === 'china'){
+      fresList.style.display = 'flex';
+      // Show both but emphasize China prices in the list
+      contentArea.innerHTML = `<h2 style="margin-top:0">Compra Direta China — (Pessoa Física)</h2>
+        <div class="answer-item">Fresa (média): <span class="price">${dataModel.fresas.chinaAvg.display}</span></div>
+        <div class="answer-item">Dissilicato (caixa): <span class="price">${dataModel.dissilicato.chinaAvg.display}</span></div>
+        <div class="answer-item">Zircônia (disco): <span class="price">${dataModel.zirconia.chinaAvg.display}</span></div>
+        <canvas id="chartMain"></canvas>`;
+      createChart(document.getElementById('filterPriceRange').value, 'china');
+      return;
+    }
+
+    // Default: re-create original content if 'all' selected
+    if(cat === 'all'){
+      contentArea.innerHTML = `
+        <h2 style="margin-top:0">1. Equipamentos: Fresadoras</h2>
+        <div class="list" id="fresadorasList">
+          <div class="answer-item"><span class="badge">1º</span> UP CERA / XT CERA (Talmax) <span class="price">R$ 360.000 - R$ 450.000</span></div>
+          <div class="answer-item"><span class="badge">2º</span> Marca Talmax (outros modelos) <span class="price">R$ 360.000 - R$ 450.000</span></div>
+          <div class="answer-item"><span class="badge">Entrada</span> PHILDEN / UP3D - PS3 / IMES-ICORE <span class="price">R$ 200.000 - R$ 250.000</span></div>
+        </div>
+        <canvas id="chartMain"></canvas>
+        <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap">
+          <div style="flex:1;min-width:220px">
+            <h3 style="margin:6px 0">Dissilicato</h3>
+            <div class="answer-item">1º E-max (Ivoclar) <span class="price">R$ 490 - R$ 600 (premium)</span></div>
+            <div class="answer-item">2º Rosetta <span class="price">R$ 190 - R$ 220 (entrada)</span></div>
+          </div>
+          <div style="flex:1;min-width:220px">
+            <h3 style="margin:6px 0">Zircônia</h3>
+            <div class="answer-item">Mais usadas: Talmax / Bapex <span class="price">R$ 450 - R$ 600 (média)</span></div>
+            <div class="answer-item">Premium: Ivoclar / Katana / Prettau <span class="price">R$ 800 - R$ 1.250</span></div>
+          </div>
+        </div>
+      `;
+      createChart(document.getElementById('filterPriceRange').value, document.getElementById('filterSource').value);
+    }
+  });
+
+  // Toggle summary visibility
+  document.getElementById('toggleSummary').addEventListener('change',(e)=>{
+    document.getElementById('summaryTable').style.display = e.target.checked ? 'block' : 'none';
+  });
+
+  // Initialize
+  createChart('both','br');
+  updateSummaryDisplay('br');
 </script>
-
 </body>
 </html>
