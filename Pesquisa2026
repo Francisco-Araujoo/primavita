@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Mercado: CAD/CAM Odontológico Brasil</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --google-blue: #4285f4;
+            --google-header-purple: #673ab7;
+            --bg-color: #f0ebf8;
+            --card-bg: #ffffff;
+            --text-main: #202124;
+            --text-secondary: #70757a;
+            --border-color: #dadce0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            max-width: 770px;
+            background-color: var(--google-header-purple);
+            height: 10px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            margin-top: 12px;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 770px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 2px rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+        }
+
+        .title-card {
+            border-top: none;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0 0 12px 0;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .question-block {
+            margin-bottom: 24px;
+        }
+
+        .question-text {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .answer-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .rank-badge {
+            background: var(--google-header-purple);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 12px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .price-tag {
+            margin-left: auto;
+            font-weight: 700;
+            color: #1e8e3e;
+        }
+
+        canvas {
+            max-height: 250px;
+            margin-top: 20px;
+        }
+
+        .footer-note {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header></header>
+
+<div class="main-container">
+    <!-- Título Principal -->
+    <div class="card title-card">
+        <h1>Relatório de Mercado CAD/CAM Odontológico</h1>
+        <p>Dados consolidados sobre fresadoras, insumos e materiais (Brasil 2025-2026).</p>
+        <p style="font-size: 14px; color: var(--text-secondary);">*Valores e rankings baseados nas informações fornecidas.</p>
+    </div>
+
+    <!-- Seção 1: Fresadoras -->
+    <div class="card">
+        <h2>1. Equipamentos: Fresadoras</h2>
+        
+        <div class="question-block">
+            <div class="question-text">Quais as melhores fresadoras (Performance)?</div>
+            <div class="answer-item"><span class="rank-badge">1º</span> UP CERA / XT CERA (Talmax)</div>
+            <div class="answer-item"><span class="rank-badge">2º</span> Marca Talmax (outros modelos)</div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-text">Quais as fresadoras mais baratas (Entrada)?</div>
+            <div class="answer-item"><span class="rank-badge">1º</span> PHILDEN</div>
+            <div class="answer-item"><span class="rank-badge">2º</span> UP3D - PS3 / IMES-ICORE</div>
+        </div>
+
+        <div style="height: 300px;">
+            <canvas id="chartFresadoras"></canvas>
+        </div>
+    </div>
+
+    <!-- Seção 2: Médias de Valores -->
+    <div class="card">
+        <h2>2. Médias Suportadas (Brasil)</h2>
+        <div class="question-block">
+            <div class="question-text">Média de valor das Fresadoras</div>
+            <div class="answer-item">Melhores/Mais Caras <span class="price-tag">R$ 360.000 - R$ 450.000</span></div>
+            <div class="answer-item">Modelos de Entrada (Mais Baratas) <span class="price-tag">R$ 200.000 - R$ 250.000</span></div>
+        </div>
+    </div>
+
+    <!-- Seção 3: Insumos - Fresas -->
+    <div class="card">
+        <h2>3. Consumíveis: Fresas</h2>
+        <div class="answer-item">Mais Utilizada: <strong>Odontomega / Original</strong></div>
+        <div class="answer-item">Fresa mais cara (Sirona): <span class="price-tag">R$ 2.700,00</span></div>
+        <div class="answer-item">Média das baratas: <span class="price-tag">R$ 250,00</span></div>
+    </div>
+
+    <!-- Seção 4: Dissilicato -->
+    <div class="card">
+        <h2>4. Material: Dissilicato de Lítio</h2>
+        <div class="question-block">
+            <div class="question-text">Ranking de Marcas</div>
+            <div class="answer-item"><span class="rank-badge">1º</span> E-max (Ivoclar)</div>
+            <div class="answer-item"><span class="rank-badge">2º</span> Rosetta</div>
+            <div class="answer-item">Opção Econômica: Talmax / Kota</div>
+        </div>
+        
+        <canvas id="chartDissilicato"></canvas>
+        
+        <div class="question-block" style="margin-top:20px;">
+            <div class="answer-item">Valores mais caros: <span class="price-tag">R$ 490 - R$ 600</span></div>
+            <div class="answer-item">Valores mais baratos: <span class="price-tag">R$ 190 - R$ 220</span></div>
+        </div>
+    </div>
+
+    <!-- Seção 5: Zircônia -->
+    <div class="card">
+        <h2>5. Material: Zircônia</h2>
+        <div class="question-block">
+            <div class="answer-item">Mais utilizadas: <strong>Talmax / Bapex</strong></div>
+            <div class="answer-item">Marcas Premium: <strong>Ivoclar / Katana / Prettau</strong></div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-text">Custos por Unidade/Disco</div>
+            <div class="answer-item">Mais Caras (Premium): <span class="price-tag">R$ 800 - R$ 1.250</span></div>
+            <div class="answer-item">Média das Baratas: <span class="price-tag">R$ 450 - R$ 600</span></div>
+        </div>
+    </div>
+
+    <!-- Nova Seção: Observações de Compra Direta -->
+    <div class="card">
+        <h2>Observação — Compra direta da China (Pessoa Física)</h2>
+        <div class="question-block">
+            <div class="answer-item">Média de Preço de Fresa: <span class="price-tag">R$ 85,00 - R$ 120,00</span></div>
+            <div class="answer-item">Média de Preço de Dissilicato (caixa): <span class="price-tag">R$ 93,00 - R$ 120,00</span></div>
+            <div class="answer-item">Média de Preço de Zircônia (disco): <span class="price-tag">R$ 249,00 - R$ 350,00</span></div>
+        </div>
+        <p style="font-size:13px; color:var(--text-secondary); margin-top:8px;">
+            Valores estimados para compras diretas (importação pessoa física) e podem não incluir frete, taxas alfandegárias ou variações cambiais.
+        </p>
+    </div>
+
+    <div class="footer-note">
+        Relatório gerado com base nas respostas fornecidas. Use como referência ilustrativa para decisões iniciais de compra.
+    </div>
+</div>
+
+<script>
+    // Gráfico Fresadoras
+    const ctx1 = document.getElementById('chartFresadoras').getContext('2d');
+    new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: ['Mais Baratas (Entrada)', 'Melhores (Premium)'],
+            datasets: [{
+                label: 'Faixa de Preço (R$ em Milhares)',
+                data: [225, 405],
+                backgroundColor: ['#4285f4', '#673ab7'],
+                borderRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: { y: { beginAtZero: true, title: { display: true, text: 'R$ (Mil)' } } }
+        }
+    });
+
+    // Gráfico Dissilicato
+    const ctx2 = document.getElementById('chartDissilicato').getContext('2d');
+    new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: ['Entrada (Talmax/Kota)', 'Média Mercado', 'Premium (E-max)'],
+            datasets: [{
+                label: 'Preço por Bloco (R$)',
+                data: [205, 350, 545],
+                borderColor: '#1e8e3e',
+                backgroundColor: 'rgba(30, 142, 62, 0.1)',
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+</script>
+
+</body>
+</html>
