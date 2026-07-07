@@ -1235,25 +1235,23 @@
         gtag('js', new Date());
         gtag('config', 'G-BBLL9Q6HZC');
     </script>
-<!-- Botão flutuante "Conferir fichas técnicas" -->
+<!-- Botão flutuante "Conferir fichas técnicas" (azul, esquerda) -->
 <style>
-  /* Container do botão flutuante */
   .pv-fab-container {
     position: fixed;
-    right: 20px;
+    left: 20px;
     bottom: 20px;
     z-index: 9999;
     font-family: Arial, sans-serif;
   }
 
-  /* Botão principal */
   .pv-fab {
-    background: linear-gradient(180deg,#ff7f50,#ff5a2b);
+    background: linear-gradient(180deg,#1e88e5,#1565c0);
     color: #fff;
     border: none;
     border-radius: 28px;
     padding: 12px 18px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.22);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1262,7 +1260,6 @@
   }
   .pv-fab:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,0.28); }
 
-  /* Ícone simples (circle) */
   .pv-fab .pv-dot {
     width: 34px;
     height: 34px;
@@ -1275,7 +1272,6 @@
     font-size:14px;
   }
 
-  /* Painel com os números */
   .pv-fab-panel {
     margin-bottom: 10px;
     background: #fff;
@@ -1317,11 +1313,10 @@
     transition: background .08s ease, transform .08s ease;
     user-select: none;
   }
-  .pv-fab-item:hover { background: #f0f8ff; transform: translateY(-2px); }
+  .pv-fab-item:hover { background: #e8f2ff; transform: translateY(-2px); }
 
-  /* Para telas pequenas: diminuir tamanho e ajustar posição */
   @media (max-width: 420px) {
-    .pv-fab-container { right: 12px; bottom: 12px; }
+    .pv-fab-container { left: 12px; bottom: 12px; }
     .pv-fab { padding: 10px 14px; }
     .pv-fab-panel { width: 180px; }
   }
@@ -1330,9 +1325,7 @@
 <div class="pv-fab-container" aria-hidden="false">
   <div id="pvFabPanel" class="pv-fab-panel" role="menu" aria-label="Fichas técnicas">
     <div class="pv-fab-panel-header">Conferir fichas técnicas</div>
-    <div id="pvFabList" class="pv-fab-list" role="list">
-      <!-- Itens serão inseridos pelo JS -->
-    </div>
+    <div id="pvFabList" class="pv-fab-list" role="list"></div>
   </div>
 
   <button id="pvFabButton" class="pv-fab" aria-haspopup="true" aria-expanded="false" title="Conferir fichas técnicas">
@@ -1347,7 +1340,6 @@
     const list = document.getElementById('pvFabList');
     const btn = document.getElementById('pvFabButton');
 
-    // Função que gera os 35 botões
     function createItems() {
       for (let i = 1; i <= 35; i++) {
         const item = document.createElement('button');
@@ -1355,30 +1347,26 @@
         item.type = 'button';
         item.setAttribute('role','listitem');
         item.textContent = i;
-        // URL padrão: você pediu somente o número 1 para apontar ao link fornecido.
+
         if (i === 1) {
           item.addEventListener('click', () => {
-            window.open('https://industriaprimavita.com.br/fichat%C3%A9cnica01', '_blank');
+            window.open('https://industriaprimavita.com.br/fichatecnica01', '_blank');
           });
         } else {
-          // Se desejar que os outros números tenham links futuros, ajuste aqui.
           item.addEventListener('click', () => {
-            // Por enquanto apenas mostra um alert suave informando que não há link configurado.
-            // Substitua essa função por window.open('URL', '_blank') quando tiver os links.
             alert('Ficha técnica ' + i + ' ainda não configurada.');
           });
         }
+
         list.appendChild(item);
       }
     }
 
-    // Alterna exibição do painel
     function togglePanel() {
       const visible = panel.classList.toggle('visible');
       btn.setAttribute('aria-expanded', visible ? 'true' : 'false');
     }
 
-    // Fecha painel ao clicar fora
     function handleDocumentClick(e) {
       if (!panel.contains(e.target) && !btn.contains(e.target)) {
         panel.classList.remove('visible');
@@ -1386,7 +1374,6 @@
       }
     }
 
-    // Tecla Esc fecha painel
     function handleKeyDown(e) {
       if (e.key === 'Escape') {
         panel.classList.remove('visible');
@@ -1395,7 +1382,6 @@
       }
     }
 
-    // Inicialização
     createItems();
     btn.addEventListener('click', togglePanel);
     document.addEventListener('click', handleDocumentClick);
