@@ -4,141 +4,82 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PRIMAVITA® PMMA BLOCK — Guia Técnico e Clínico Completo para CAD/CAM</title>
-  <meta name="description" content="Guia completo sobre PRIMAVITA® PMMA BLOCK: propriedades físicas, fluxo CAD/CAM, acabamento e aplicações clínicas para coroas, pontes e bases de prótese." />
-  <meta name="keywords" content="blocos PMMA, PMMA CAD/CAM, PRIMAVITA PMMA, fresagem dentária, provisórios de longa duração, polimetacrilato odontológico, calcináveis CAD/CAM, cimentação PMMA, odontologia digital" />
-  <link rel="icon" href="data:;base64,iVBORw0K" />
+  <meta name="description" content="Guia completo sobre PRIMAVITA® PMMA BLOCK: aplicações, fluxo CAD/CAM, acabamento e informações para profissionais de odontologia." />
+  <meta name="keywords" content="blocos PMMA, PMMA CAD/CAM, PRIMAVITA PMMA, fresagem dentária, provisórios de longa duração, calcináveis CAD/CAM, cimentação PMMA, odontologia digital" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#f4f7fb;--card:#ffffff;--accent:#005a8d;--accent-2:#0aa0ff;--muted:#6b7280;--text:#123047;--maxw:1100px;--radius:16px;--shadow: 0 10px 40px rgba(8,15,30,0.06);}    
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, sans-serif; background:linear-gradient(180deg,#eef6fb 0%, #f7fbff 100%); color:var(--text); margin:0; padding:40px; display:flex; justify-content:center}
-    .container{width:100%; max-width:var(--maxw)}
-    header{display:flex; gap:24px; align-items:center; margin-bottom:24px}
-    header img{height:140px}
-    h1{font-size:28px; margin:0; color:var(--accent); line-height:1.2}
-    .meta{color:var(--muted); font-size:13px; margin-top:4px}
-    .card{background:#fff; border-radius:var(--radius); padding:40px; box-shadow:var(--shadow); border:1px solid rgba(6,16,35,0.04)}
-    .grid{display:grid; grid-template-columns:1fr 340px; gap:32px}
-    .content h2{color:#073c59; margin-top:32px; border-left:4px solid var(--accent-2); padding-left:14px; font-size:22px}
-    .content h3{color:#0a4d70; margin-top:24px; font-size:18px}
-    .badge{display:inline-block; background:linear-gradient(90deg,#e6f3fb,#f1fbff); color:var(--accent); padding:8px 14px; border-radius:999px; font-weight:700; font-size:12px; border:1px solid rgba(5,90,141,0.1)}
-    p, li{line-height:1.8; font-size:15px}
-    .summary-box{background:#f8fbff; border:1px solid #dcecf7; border-radius:12px; padding:20px; margin:24px 0}
-    .summary-box ul{margin:0; padding-left:20px}
-    aside{background:#fafcfe; border:1px solid rgba(6,16,35,0.04); padding:24px; border-radius:14px; position:sticky; top:20px}
-    .cta-button{display:inline-block; margin-top:24px; background:var(--accent); color:white; text-decoration:none; padding:16px 28px; border-radius:10px; font-weight:700; letter-spacing:0.5px; box-shadow: 0 8px 20px rgba(0,90,141,0.15); transition: all .2s ease}
-    .cta-button:hover{transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,90,141,0.2)}
-    .download-link{display:flex; align-items:center; gap:8px; margin-top:12px; color:var(--accent); font-weight:600; text-decoration:none; padding:12px; border-radius:8px; border:1px solid rgba(5,90,141,0.1); background:#fff}
-    .faq-item{margin-bottom:16px; border-bottom:1px solid #edf2f7; padding-bottom:12px}
-    .faq-q{font-weight:700; color:#073c59; display:block; margin-bottom:4px}
-    .banner{display:flex; gap:20px; background:linear-gradient(90deg, rgba(6,90,141,0.05), rgba(10,160,255,0.03)); padding:24px; border-radius:14px; margin-bottom:24px; border:1px solid rgba(5,90,141,0.04)}
-    .icon-wrap{min-width:48px; height:48px; background:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; box-shadow: 0 4px 12px rgba(0,0,0,0.03)}
-    footer{margin-top:40px; color:var(--muted); font-size:13px; border-top:1px solid #eee; padding-top:24px}
-    @media(max-width:980px){.grid{grid-template-columns:1fr} header img{height:100px} .banner{flex-direction:column} aside{position:static}}
+    :root{--bg:#f4f7fb;--card:#fff;--accent:#005a8d;--accent2:#0aa0ff;--muted:#6b7280;--text:#123047;--maxw:1100px;--radius:16px;--shadow:0 10px 40px rgba(8,15,30,.07)}
+    *{box-sizing:border-box} body{font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#eef6fb 0%,#f7fbff 100%);color:var(--text);margin:0;padding:40px;display:flex;justify-content:center}.container{width:100%;max-width:var(--maxw)}
+    header{display:flex;gap:24px;align-items:center;margin-bottom:24px}header>img{height:140px}h1{font-size:28px;line-height:1.2;margin:0;color:var(--accent)}.meta{color:var(--muted);font-size:13px;margin-top:5px}
+    .card{background:var(--card);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);border:1px solid rgba(6,16,35,.04)}
+    .cover{position:relative;overflow:hidden;border-radius:14px;height:365px;margin-bottom:30px;background:#e5edf3}.cover img{width:100%;height:100%;object-fit:cover;display:block}.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,45,73,.66),rgba(0,45,73,.08) 70%,transparent)}.cover-copy{position:absolute;left:34px;bottom:30px;z-index:1;color:#fff;max-width:560px}.cover-copy span{display:inline-block;background:rgba(255,255,255,.17);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;letter-spacing:.5px}.cover-copy h2{font-size:27px;margin:12px 0 0;color:#fff;line-height:1.25}
+    .summary{background:#f8fbff;border:1px solid #dcecf7;border-radius:12px;padding:20px;margin:0 0 28px}.summary h2{margin:0 0 10px;font-size:18px;color:var(--accent)}.summary ul{margin:0;padding-left:20px}.grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:32px}.content h2{color:#073c59;margin:34px 0 15px;border-left:4px solid var(--accent2);padding-left:14px;font-size:22px}.content h3{color:#0a4d70;margin:23px 0 9px;font-size:18px}p,li{line-height:1.8;font-size:15px}.badge{display:inline-block;background:linear-gradient(90deg,#e6f3fb,#f1fbff);color:var(--accent);padding:8px 14px;border-radius:999px;font-weight:700;font-size:12px;border:1px solid rgba(5,90,141,.1)}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.feature{padding:16px;border-radius:12px;background:#fbfdff;border:1px solid #e8f0f5}.feature svg{width:28px;height:28px;margin-bottom:8px}.feature strong{display:block;color:#073c59;font-size:14px}.feature span{display:block;font-size:13px;line-height:1.55;color:var(--text);margin-top:4px}
+    aside{height:max-content;background:#fafcfe;border:1px solid rgba(6,16,35,.04);padding:24px;border-radius:14px;position:sticky;top:20px}aside h3{margin-top:0;color:#073c59}.download{display:flex;align-items:center;gap:9px;margin-top:12px;color:var(--accent);font-weight:700;text-decoration:none;padding:12px;border-radius:9px;border:1px solid rgba(5,90,141,.1);background:#fff}.cta{display:inline-block;margin-top:24px;background:var(--accent);color:#fff;text-decoration:none;padding:16px 27px;border-radius:10px;font-weight:700;letter-spacing:.4px;box-shadow:0 8px 20px rgba(0,90,141,.15)}.cta:hover{transform:translateY(-2px)}.faq{border-bottom:1px solid #edf2f7;padding:0 0 14px;margin-bottom:16px}.faq strong{color:#073c59}footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid #eee;padding-top:24px}
+    @media(max-width:980px){body{padding:22px}.card{padding:24px}.grid{grid-template-columns:1fr}aside{position:static}header>img{height:92px}.cover{height:290px}.feature-grid{grid-template-columns:1fr}.cover-copy{left:24px;bottom:22px}.cover-copy h2{font-size:22px}}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <img src="https://raw.githubusercontent.com/Francisco-Araujoo/primavita/main/img/Primavita%20Logo.svg" alt="Primavita Logo">
-      <div>
-        <h1>PRIMAVITA® PMMA BLOCK: Excelência em Restaurações CAD/CAM</h1>
-        <div class="meta">Guia Técnico e Clínico • Atualizado em 07/07/2026</div>
-      </div>
+      <img src="https://raw.githubusercontent.com/Francisco-Araujoo/primavita/main/img/Primavita%20Logo.svg" alt="Logotipo Primavita">
+      <div><h1>PRIMAVITA® PMMA BLOCK: Excelência em Restaurações CAD/CAM</h1><div class="meta">Guia técnico e clínico para profissionais • Ficha técnica oficial disponível para consulta</div></div>
     </header>
-
-    <div class="card">
-      <!-- Resumo Executivo -->
-      <section class="summary-box">
-        <h3 style="margin-top:0; color:var(--accent)">Destaques do Guia</h3>
-        <ul>
-          <li><strong>Alta Fidelidade:</strong> Formulação com polimetacrilato de alto peso molecular para usinagem sem rebarbas.</li>
-          <li><strong>Indicações:</strong> De coroas unitárias a bases de próteses totais e padrões calcináveis.</li>
-          <li><strong>Estética Natural:</strong> Pigmentação biocompatível com fluorescência controlada.</li>
-          <li><strong>Estabilidade:</strong> Elevada resistência à absorção de água e estabilidade dimensional cromática.</li>
-        </ul>
+    <article class="card">
+      <figure class="cover">
+        <img src="https://raw.githubusercontent.com/Francisco-Araujoo/primavita/main/img/blocos/Bloco_PMMA.jpeg" alt="Bloco PRIMAVITA PMMA para fresagem CAD/CAM">
+        <figcaption class="cover-copy"><span>ODONTOLOGIA DIGITAL</span><h2>Precisão, estética e versatilidade para o fluxo CAD/CAM.</h2></figcaption>
+      </figure>
+      <section class="summary">
+        <h2>Destaques do guia</h2>
+        <ul><li>Entenda as aplicações dos blocos de PMMA no planejamento e na produção de provisórios.</li><li>Conheça boas práticas de usinagem, acabamento, polimento e instalação clínica.</li><li>Consulte a documentação oficial antes de definir parâmetros e protocolos específicos.</li></ul>
       </section>
-
       <div class="grid">
         <main class="content">
-          <p><span class="badge">Visão Geral</span> O <strong>PRIMAVITA® PMMA BLOCK</strong> representa o estado da arte em materiais para sistemas CAD/CAM. Desenvolvido para atender às demandas de laboratórios de prótese e consultórios digitais, este polímero combina resistência mecânica com uma estética que mimetiza o elemento dental natural, sendo a solução ideal para provisórios de curta e longa duração.</p>
-
-          <h2>1. Ciência dos Materiais: Composição e Propriedades</h2>
-          <p>A base química do PRIMAVITA® PMMA é o polimetacrilato, reforçado pelo crosslinker <strong>EGDMA</strong> (Dimetacrilato de Etilenoglicol). Esta combinação resulta em uma estrutura polimérica densa e altamente reticulada.</p>
-          <ul>
-            <li><strong>Biocompatibilidade:</strong> Pigmentos orgânicos e inorgânicos testados para segurança intraoral.</li>
-            <li><strong>Fluorescência:</strong> Aditivos específicos garantem que a peça apresente comportamento óptico similar ao esmalte dental sob luz UV.</li>
-            <li><strong>Resistência à Flexão:</strong> Parâmetros otimizados para evitar fraturas em pontes extensas.</li>
-          </ul>
-
-          <h2>2. O Fluxo de Trabalho Digital (Workflow)</h2>
-          <h3>Fase de Planejamento e CAD</h3>
-          <p>Durante o design, é fundamental respeitar as espessuras mínimas. Para coroas de PMMA, recomenda-se uma parede mínima de 1.0mm para garantir a integridade estrutural durante o uso clínico.</p>
-          <h3>Usinagem e Fresagem (CAM)</h3>
-          <p>O PRIMAVITA® é compatível com sistemas de fresagem a seco e úmido (71mm, 95mm e 98mm). Dica técnica: Utilize fresas específicas para polímeros e monitore a temperatura; o superaquecimento pode levar à fusão superficial do material, comprometendo o ajuste marginal.</p>
-
-          <h2>3. Acabamento e Polimento Profissional</h2>
-          <p>O sucesso estético depende de um protocolo rigoroso de acabamento:</p>
-          <ol>
-            <li><strong>Remoção de Sprues:</strong> Utilize discos diamantados finos em baixa rotação.</li>
-            <li><strong>Alisamento:</strong> Borrachas de granulação média para eliminar marcas de fresa.</li>
-            <li><strong>Brilho Final:</strong> Escovas de pelo de cabra ou algodão com pastas à base de óxido de alumínio ou diamante para obter o efeito "glaze" natural.</li>
-          </ol>
-
-          <h2>4. Protocolo de Instalação e Cimentação</h2>
-          <p>Para provisórios de longa duração, a cimentação correta é vital. O bloco PMMA deve ser limpo com álcool isopropílico. Recomenda-se o uso de <strong>cimentos resinosos</strong>, seguindo o protocolo adesivo do fabricante, garantindo uma adesão química e mecânica eficiente.</p>
-
-          <h2>5. Casos Clínicos Sugeridos</h2>
-          <ul>
-            <li><strong>Provisórios Imediatos:</strong> Após cirurgias de implante para carga imediata.</li>
-            <li><strong>Diagnóstico Estético:</strong> "Mock-ups" usinados para validação funcional antes da cerâmica definitiva.</li>
-            <li><strong>Bases Gum:</strong> Confecção de bases de prótese total com gradiente de gengiva natural.</li>
-          </ul>
-
-          <h2>6. FAQ - Perguntas Frequentes</h2>
-          <div class="faq-item">
-            <span class="faq-q">O material sofre alteração de cor com o tempo?</span>
-            <p>Não significativamente. A baixa absorção de água e a estabilidade dos pigmentos garantem alta resistência ao manchamento.</p>
+          <p><span class="badge">VISÃO GERAL</span></p>
+          <p>O <strong>PRIMAVITA® PMMA BLOCK</strong> foi desenvolvido para integrar fluxos de trabalho em CAD/CAM na odontologia. Mais do que uma alternativa para a confecção de provisórios, o material oferece uma abordagem organizada para laboratórios e clínicas que buscam previsibilidade desde o planejamento digital até o acabamento final.</p>
+          <div class="feature-grid">
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="#005a8d" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg><strong>Fluxo eficiente</strong><span>Compatível com processos de design e fresagem CAD/CAM.</span></div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="#005a8d" stroke-width="1.7"><path d="M4 19l5-5 3 3 7-8"/><path d="M14 9h5v5"/></svg><strong>Aplicações diversas</strong><span>Soluções para provisórios, padrões e bases de prótese.</span></div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="#005a8d" stroke-width="1.7"><path d="M12 3l7 4v5c0 4-2.7 7.1-7 9-4.3-1.9-7-5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg><strong>Uso profissional</strong><span>Informação técnica para decisões clínicas e laboratoriais.</span></div>
           </div>
-          <div class="faq-item">
-            <span class="faq-q">Qual a validade das peças usinadas?</span>
-            <p>O bloco tem validade de 10 anos, e a restauração provisória é indicada para uso clínico conforme a necessidade do tratamento.</p>
-          </div>
-          <div class="faq-item">
-            <span class="faq-q">Posso usar em qualquer fresadora?</span>
-            <p>Sim, desde que a fresadora suporte os formatos de 71mm, 95mm ou 98mm.</p>
-          </div>
-
-          <a class="cta-button" href="https://industriaprimavita.com.br/atendimento" target="_blank" rel="noopener">CONSULTAR EQUIPE TÉCNICA</a>
-
-          <footer>
-            <p>Este guia é um recurso informativo para profissionais. As especificações exatas devem ser consultadas na ficha técnica oficial.</p>
-          </footer>
+          <h2>O papel do PMMA na odontologia digital</h2>
+          <p>Em reabilitações estéticas e funcionais, o período provisório é uma etapa relevante para avaliação de forma, oclusão, fonética e adaptação do paciente. Ao utilizar blocos de PMMA para CAD/CAM, o profissional pode transferir o planejamento digital para uma peça usinada e ajustar o resultado de acordo com as necessidades do caso.</p>
+          <p>O PRIMAVITA® PMMA BLOCK está disponível nas versões <strong>Mono, Multi, Clear e Gum</strong>. Essa variedade permite selecionar soluções adequadas a diferentes objetivos: provisórios em tons dentais, trabalhos com transição de cor, padrões calcináveis e bases de prótese.</p>
+          <h2>Aplicações clínicas e laboratoriais</h2>
+          <p>O material pode ser empregado em fluxos que envolvem coroas e pontes provisórias, inlays, onlays, facetas provisórias, padrões para fundição ou injeção de cerâmica e bases de prótese. A indicação final deve considerar o planejamento clínico, a extensão do trabalho, o equipamento utilizado e as orientações da ficha técnica.</p>
+          <h3>Provisórios como ferramenta de diagnóstico</h3>
+          <p>Além de proteger preparos, o provisório pode ajudar a validar proporções, perfil de emergência e referências estéticas antes da etapa definitiva. A usinagem digital favorece a repetibilidade quando ajustes ou novas versões são necessários.</p>
+          <h2>Planejamento no CAD: decisões que influenciam o resultado</h2>
+          <p>O desenho deve respeitar os requisitos do caso e as recomendações aplicáveis ao material. Antes de enviar o arquivo ao CAM, revise contatos proximais, áreas oclusais, espessuras, conectores e eixo de inserção. Para blocos multicoloridos, o posicionamento da restauração no disco ou bloco merece atenção, pois influencia a distribuição visual das camadas.</p>
+          <h2>Usinagem: organização e cuidado com o processo</h2>
+          <p>Fixe o bloco conforme as instruções do fabricante do equipamento e escolha ferramentas adequadas ao polímero. Estratégias de fresagem, desgaste das fresas e geração de calor podem afetar a superfície da peça. Por isso, é recomendável acompanhar os parâmetros definidos para sua máquina e realizar uma inspeção cuidadosa após a usinagem.</p>
+          <h3>Checklist antes de remover a peça</h3>
+          <ul><li>Verifique se a usinagem foi concluída sem marcas ou áreas incompletas.</li><li>Confirme a posição dos pontos de retenção antes da separação do bloco.</li><li>Remova a restauração com cuidado para preservar margens e detalhes anatômicos.</li></ul>
+          <h2>Acabamento, textura e polimento</h2>
+          <p>O acabamento é a etapa que transforma uma peça usinada em uma restauração visualmente refinada. Faça a remoção dos pontos de retenção de forma controlada e utilize uma sequência progressiva de instrumentos de acabamento e polimento. O objetivo é reduzir irregularidades sem alterar a anatomia projetada.</p>
+          <p>Após o polimento, faça uma avaliação sob boa iluminação. Verifique textura, brilho, adaptação e coerência da cor com o planejamento. Quando necessário, pequenos ajustes podem ser realizados antes da limpeza e desinfecção da peça.</p>
+          <h2>Instalação: atenção aos protocolos</h2>
+          <p>A etapa de cimentação deve seguir o protocolo indicado para o caso e para os materiais selecionados pelo profissional. A ficha técnica do produto e as instruções dos sistemas adesivos ou cimentos utilizados são referências essenciais. Antes do uso intraoral, a peça deve ser adequadamente limpa e desinfetada.</p>
+          <h2>Perguntas frequentes</h2>
+          <div class="faq"><strong>Quais formatos estão disponíveis?</strong><p>Consulte a ficha técnica para verificar os modelos de 71 mm, 95 mm e 98 mm e sua disponibilidade para cada versão.</p></div>
+          <div class="faq"><strong>Quais cores podem ser encontradas?</strong><p>A linha inclui tons dentais, opções BL, calcináveis e versões Gum. A relação completa está disponível no documento técnico.</p></div>
+          <div class="faq"><strong>O material pode ser usado em qualquer equipamento?</strong><p>A compatibilidade depende do formato suportado, das ferramentas e das recomendações do fabricante da sua fresadora.</p></div>
+          <div class="faq"><strong>Onde consultar as especificações oficiais?</strong><p>Utilize o link para a ficha técnica na barra lateral antes de definir procedimentos e aplicações.</p></div>
+          <p>Para avaliar a melhor solução para seu laboratório ou clínica, entre em contato com a equipe Primavita.</p>
+          <a class="cta" href="https://industriaprimavita.com.br/atendimento" target="_blank" rel="noopener">FALAR COM ATENDIMENTO</a>
+          <footer>Conteúdo informativo destinado a profissionais. As especificações, indicações, precauções e instruções oficiais devem ser confirmadas na ficha técnica do produto.</footer>
         </main>
-
         <aside>
-          <h3 style="margin-top:0">Especificações Rápidas</h3>
-          <p><strong>Registro ANVISA:</strong> 81954689001</p>
-
-          <h4 style="margin-bottom:8px">Versões e Camadas</h4>
-          <p style="font-size:13px; color:var(--muted)">Mono e Multi-camadas (estética degradê natural).</p>
-
-          <h4 style="margin-bottom:8px">Documentação</h4>
-          <a class="download-link" href="https://drive.google.com/file/d/1eXs5Nx8DnLsi7aoAmRc9wxcnyh-mNgot/view?usp=sharing" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            Ficha Técnica (PDF)
-          </a>
-
-          <div style="margin:30px 0; text-align:center;">
-            <img src="https://raw.githubusercontent.com/Francisco-Araujoo/primavita/main/img/Primavita%20Logo.svg" alt="Primavita Logo" style="width:80%;">
-          </div>
-
-          <h4>Atendimento Especializado</h4>
-          <p style="font-size:14px">Suporte para laboratórios e clínicas em todo o Brasil.<br>
-          <a href="https://industriaprimavita.com.br/atendimento" target="_blank" rel="noopener" style="color:var(--accent); font-weight:700;">Iniciar Atendimento</a></p>
+          <h3>Informações do produto</h3>
+          <p><strong>PRIMAVITA® PMMA BLOCK</strong><br>Versões Mono, Multi, Clear e Gum para fluxos CAD/CAM.</p>
+          <h4>Documentação oficial</h4>
+          <a class="download" href="https://drive.google.com/file/d/1eXs5Nx8DnLsi7aoAmRc9wxcnyh-mNgot/view?usp=sharing" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Baixar Ficha Técnica (PDF)</a>
+          <div style="margin:30px 0;text-align:center"><img src="https://raw.githubusercontent.com/Francisco-Araujoo/primavita/main/img/Primavita%20Logo.svg" alt="Primavita" style="width:80%"></div>
+          <h4>Atendimento especializado</h4><p style="font-size:14px">Dúvidas, informações comerciais ou suporte para sua operação?<br><a href="https://industriaprimavita.com.br/atendimento" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700">Falar com atendimento</a></p>
         </aside>
       </div>
-    </div>
+    </article>
   </div>
 </body>
 </html>
