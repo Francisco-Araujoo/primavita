@@ -260,4 +260,11 @@
     <priority>0.6</priority>
   </url>
 
+   <!-- Artigo 1 -->
+  <url>
+    <loc>https://industriaprimavita.com.br/doanalogicoaodigtal/loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
