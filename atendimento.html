@@ -20,9 +20,34 @@
   <meta property="og:url" content="https://industriaprimavita.com.br/whatsapp" />
   <meta property="og:site_name" content="Primavita Indústria" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Primavita | Atendimento" />
-  <meta name="twitter:description" content="Converse agora com um especialista Primavita." />
+  <!-- Google Tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16482716734"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16482716734');
+    gtag('config', 'G-7NPMX59B22');
+  </script>
+
+  <!-- Script para disparar conversão no WhatsApp -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16482716734/whatsapp_click', // Você pode ajustar o 'label' se tiver um específico criado no Ads
+          'event_callback': callback
+      });
+      // Fallback caso o callback do Google demore
+      setTimeout(callback, Span); 
+      return false;
+    }
+  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -207,11 +232,11 @@
     </div>
 
     <h1 class="fade-up font-display font-bold text-xl sm:text-2xl text-white mb-2">
-      Conectando você ao<br />especialista Primavita
+      Conectando você à<br />Recepção Primavita
     </h1>
 
     <p class="fade-up text-gray-400 text-sm sm:text-base font-light mb-4">
-      Aguarde enquanto preparamos seu atendimento
+      Um momento, estamos redirecionando você para o atendimento oficial.
     </p>
 
     <div class="fade-up dots mb-2">
@@ -222,21 +247,15 @@
       <div class="status-bar-fill" id="progress-bar"></div>
     </div>
 
-    <div class="vendedor-tag" id="vendedor-tag">
-      Atendente: <span id="vendedor-nome"></span>
+    <div class="vendedor-tag" id="vendedor-tag">Atendimento
+      <span id="vendedor-nome">Recepção</span>
     </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <script>
-    const vendedores = [
-      { nome: "Drielly", numero: "5519999978400" },
-      { nome: "Igor", numero: "5519997453070" },
-      { nome: "Mayara", numero: "5519999746897" },
-      { nome: "Michael", numero: "5519996820561" },
-      { nome: "Renata", numero: "5519999564955" },
-    ];
+    const numeroOficial = "5519997814085";
 
     (function() {
       const canvasContainer = document.getElementById('canvas-container');
@@ -299,54 +318,40 @@
           renderer.render(scene, camera);
         }
         animateScene();
-
-        window.addEventListener('resize', () => {
-          camera.aspect = window.innerWidth / window.innerHeight;
-          camera.updateProjectionMatrix();
-          renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-      }
-
-      const STORAGE_KEY = 'primavita_rodizio';
-
-      function getProximoVendedor() {
-        let index = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
-        const vendedor = vendedores[index % vendedores.length];
-        localStorage.setItem(STORAGE_KEY, String(index + 1));
-        return vendedor;
       }
 
       const bar = document.getElementById('progress-bar');
       const tag = document.getElementById('vendedor-tag');
-      const nome = document.getElementById('vendedor-nome');
 
       let width = 0;
-      const duration = 2000;
-      const interval = 30;
-      const step = (interval / duration) * 100;
-
       const timer = setInterval(function() {
-        width += step;
+        width += 1.5;
         if (width >= 95) {
           width = 95;
           clearInterval(timer);
-
-          const vendedor = getProximoVendedor();
-
-          nome.textContent = vendedor.nome;
           tag.classList.add('show');
 
           setTimeout(function() {
             bar.style.width = '100%';
-          }, 400);
+            const whatsappUrl = 'https://wa.me/' + numeroOficial + '?text=' + encodeURIComponent('Olá, vim através do site e gostaria de atendimento.');
 
-          setTimeout(function() {
-            const texto = encodeURIComponent('Olá vim através do site');
-            window.location.href = 'https://wa.me/' + vendedor.numero + '?text=' + texto;
-          }, 1200);
+            // Dispara a conversão e redireciona
+            if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-16482716734',
+                    'event_callback': function() {
+                        window.location.href = whatsappUrl;
+                    }
+                });
+                // Fallback de segurança 800ms
+                setTimeout(() => { window.location.href = whatsappUrl; }, 800);
+            } else {
+                window.location.href = whatsappUrl;
+            }
+          }, 1000);
         }
         bar.style.width = Math.min(width, 95) + '%';
-      }, interval);
+      }, 30);
     })();
   </script>
 
