@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha Técnica - Removedor de Cera</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ficha Técnica</h1>
+
+    <div class="section">
+        <div class="section-title">Produto:</div>
+        <p>Removedor de Cera</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Composição:</div>
+        <p>Hidrocarbonetos Alifáticos Aromáticos</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Indicações:</div>
+        <p>
+            Eliminação de resíduos de ceras e gorduras na confecção de próteses odontológicas e limpeza de gorduras e graxas em geral.<br>
+            Para uso nas técnicas convencional e micro-ondas.<br>
+            Totalmente inodoro, não deixando resíduos nas mãos, instrumental ou prótese.<br>
+            Elimina resíduos de ceras, gorduras e graxas em geral, contribuindo significativamente para adesão do dente à base da prótese.
+        </p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Apresentação:</div>
+        <p>Frasco de 250ml, 500ml e 1L</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Instrução de Uso:</div>
+        <p>
+            Após inclusão na Mufla e cura do gesso, deve-se retirar a cera, uma vez que os dentes já estão posicionados. Para isso, aquecer a água num recipiente separado. Mergulhar a Mufla por cerca de 5 minutos nesse recipiente e abrir para retirar a cera derretida. Lavar as superfícies internas da Mufla com algodão embebido no Removedor de Cera, friccionando por toda a área, para retirar os resíduos da cera. Para retirar os resíduos da cera, umedecer o algodão com Removedor de Cera, friccionando sobre a área a ser limpa.
+        </p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Advertências/Precauções:</div>
+        <p>
+            Produto inflamável e volátil.<br>
+            Manter o frasco fechado.<br>
+            Usar longe do fogo.<br>
+            Não aplicar em superfícies aquecidas.<br>
+            Manter fora do alcance das crianças.<br>
+            Evitar contato com a pele e com os olhos.<br>
+            Se causar irritação, lavar com água corrente.<br>
+            Se ingerido acidentalmente, beber água e não provocar vômito. Procurar auxílio médico.<br>
+            Recomenda-se o manuseio do produto em locais ventilados, utilizando-se luvas de nitrila e óculos de proteção.<br>
+            Seu manuseio não é recomendado para gestantes, lactantes e pessoas com alergias reconhecidas para este tipo de produto.<br>
+            Manter o frasco fechado.
+        </p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Prazo de Validade:</div>
+        <p>5 anos a partir da data de fabricação</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Registro:</div>
+        <p>Produto declarado isento de cadastro ou registro pelo Ministério da Saúde, conforme RDC 24/2009 e Lei no 5.991, de 17 de dezembro de 1973.</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Responsável Técnico:</div>
+        <p>Mauro Rodrigo Vieira CRQ-IV: 04366291</p>
+    </div>
+
+</body>
+</html>
