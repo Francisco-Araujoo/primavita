@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ceras WS — Ceras Odontológicas de Precisão | Indústria Primavita</title>
+<meta name="description" content="Plano Anatômico Oclusal (Moldeira) e Plano de Orientação Padronizado formato Ferradura. Ceras odontológicas para dentistas e protéticos. Indústria Primavita.">
+<meta property="og:title" content="Ceras WS — Ceras Odontológicas de Precisão">
+<meta property="og:description" content="Plano Anatômico Oclusal e Plano de Orientação Padronizado para dentistas e protéticos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e1a;--bg2:#0d1b2e;--card:#0b1626;--line:#1c2a42;--cyan:#00e5ff;--white:#fff;--muted:#8fa3bd;--r:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--white);font-family:'Rubik',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.logo{font-family:'Rubik',system-ui,sans-serif;letter-spacing:-.02em;line-height:1.15}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.cy{color:var(--cyan)}
+.eyebrow{color:var(--cyan);font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--cyan);color:var(--bg);font-weight:700;padding:14px 28px;border-radius:var(--r);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(0,229,255,.45)}
+.btn svg{width:20px;height:20px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(10,14,26,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-size:1.5rem;font-weight:800}
+nav{display:flex;align-items:center;gap:32px;font-size:.92rem;color:var(--muted)}
+nav a:hover{color:var(--cyan)}
+nav .btn{padding:9px 20px;color:var(--bg);font-size:.9rem}
+nav .btn:hover{color:var(--bg)}
+.m-cta{display:none;padding:8px 16px;font-size:.88rem}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:68px 0 0}
+.hero-bg{position:absolute;inset:-40px;background:url(data:image/jpeg;base64,[base64 data stripped]) center/cover no-repeat;filter:blur(28px);transform:scale(1.1)}
+.hero-ov{position:absolute;inset:0;background:rgba(10,14,26,.55)}
+.cover{position:relative;z-index:2;height:calc(100vh - 68px);max-width:100%}
+.cover img{height:100%;width:auto;max-width:100%;object-fit:contain}
+.cover-cta{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);white-space:nowrap}
+.cover-cta:hover{transform:translateX(-50%) translateY(-2px)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero .wrap{position:relative;z-index:2;padding-top:90px;padding-bottom:90px}
+.hero-unused h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;margin:18px 0 22px;text-shadow:0 0 40px rgba(0,229,255,.3)}
+.hero p.lead{max-width:680px;margin:0 auto 38px;color:#c3d0e2;font-size:clamp(1.05rem,2vw,1.25rem)}
+.scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);width:24px;height:40px;border:2px solid rgba(255,255,255,.3);border-radius:20px;z-index:2}
+.scroll i{position:absolute;left:50%;top:6px;width:6px;height:6px;margin-left:-3px;background:var(--cyan);border-radius:50%;animation:dot 1.6s ease-in-out infinite}
+@keyframes dot{50%{transform:translateY(16px)}}
+/* sections */
+section.s{padding:112px 0}
+.alt{background:var(--bg2)}
+.title{font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:800;text-align:center;margin-bottom:14px}
+.sub{color:var(--muted);text-align:center;max-width:560px;margin:0 auto 64px}
+/* products */
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.prod:hover{border-color:rgba(0,229,255,.45);box-shadow:0 0 28px rgba(0,229,255,.18)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.duo figure{position:relative;overflow:hidden;background:#000}
+.duo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;transition:transform .7s}
+.prod:hover .duo img{transform:scale(1.05)}
+.duo figcaption{position:absolute;left:12px;bottom:12px;background:rgba(10,14,26,.78);color:#fff;border:1px solid rgba(0,229,255,.5);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.prod .ph{aspect-ratio:4/5;overflow:hidden;background:#0f1d33}
+.prod img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.prod:hover img{transform:scale(1.05)}
+.prod .tx{padding:32px}
+.prod h3{font-size:1.5rem;margin:8px 0 14px}
+.prod p{color:var(--muted)}
+/* diferenciais */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.dif{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px 24px;text-align:center;transition:border-color .3s}
+.dif:hover{border-color:rgba(0,229,255,.45)}
+.ic{width:56px;height:56px;margin:0 auto 20px;border-radius:50%;background:rgba(0,229,255,.1);display:flex;align-items:center;justify-content:center;transition:background .3s}
+.dif:hover .ic{background:rgba(0,229,255,.2)}
+.ic svg{width:28px;height:28px;stroke:var(--cyan);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dif h3{font-size:1.1rem;margin-bottom:10px}
+.dif p{color:var(--muted);font-size:.93rem}
+/* gallery */
+.gal button{all:unset;display:block;cursor:zoom-in;border:1px solid var(--line);border-radius:14px;overflow:hidden;aspect-ratio:3/4;background:#0f1d33;transition:border-color .3s}
+.gal button:hover{border-color:rgba(0,229,255,.45)}
+.gal button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.gal button:hover img{transform:scale(1.07)}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(5,8,16,.94);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-height:92vh;max-width:96vw;width:auto;border-radius:8px}
+.lb span{position:absolute;top:18px;right:26px;font-size:2.4rem;color:#fff;line-height:1}
+/* cta */
+.cta{text-align:center}
+.cta h2{font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:800;margin-bottom:20px}
+.cta p{color:var(--muted);font-size:1.1rem;max-width:560px;margin:0 auto 38px}
+.cta .btn{font-size:1.15rem;padding:18px 38px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer b{color:#fff}
+/* reveal */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .7s ease-out,transform .7s ease-out}
+.rv.in{opacity:1;transform:none}
+@media(max-width:980px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+ nav a:not(.btn){display:none}nav .btn{display:none}.m-cta{display:inline-flex}
+ .grid2{grid-template-columns:1fr}.grid4{grid-template-columns:1fr}
+ section.s{padding:80px 0}.cover-cta{font-size:clamp(.65rem,2.7vw,.95rem);padding:8px 14px;bottom:3%;max-width:95%;white-space:normal;text-align:center;justify-content:center}
+ footer .wrap{flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+/* Capa horizontal 16:9, sem fundo desfocado */
+.hero{min-height:0;display:block;padding:68px 0 0}
+.hero .hero-bg,.hero .hero-ov{display:none}
+.hero .cover{width:100%;max-width:none;height:auto;aspect-ratio:16/9;overflow:hidden}
+.hero .cover img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <a href="#topo" class="logo">Ceras <span class="cy">WS</span></a>
+  <nav aria-label="Principal">
+   <a href="#produtos">Produtos</a><a href="#diferenciais">Diferenciais</a><a href="#galeria">Galeria</a>
+   <a class="btn" href="https://industriaprimavita.com.br/atendimento" target="_blank" rel="noopener noreferrer">Fale Conosco</a>
+  </nav>
+  <a class="btn m-cta" href="https://industriaprimavita.com.br/atendimento" target="_blank" rel="noopener noreferrer">Contato</a>
+ </div>
+</header>
+
+<main id="topo">
+<section class="hero">
+ <div class="hero-bg" aria-hidden="true"></div>
+ <div class="hero-ov"></div>
+ <h1 class="sr">Ceras WS — Plano Anatômico Oclusal e Plano de Orientação Padronizado</h1>
+ <div class="cover">
+  <img src="data:image/jpeg;base64,[base64 data stripped]" width="1080" height="1350" alt="Ceras WS — Moldeira e Ferradura em rosa e branco. Mais padronização, menos etapas manuais, mais praticidade na confecção de próteses">
+  <a class="btn cover-cta" href="https://industriaprimavita.com.br/atendimento" target="_blank" rel="noopener noreferrer">Fale com nossos vendedores
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+</section>
+
+<section class="s" id="produtos">
+ <div class="wrap">
+  <h2 class="title rv">Nossos <span class="cy">Produtos</span></h2>
+  <p class="sub rv">Duas soluções essenciais para o seu consultório ou laboratório.</p>
+  <div class="grid2">
+   <article class="prod rv">
+    <div class="duo">
+     <figure><img src="data:image/jpeg;base64,[base64 data stripped]" width="640" height="800" loading="lazy" alt="Moldeira em cera branca — Plano Anatômico Oclusal"><figcaption>Branca</figcaption></figure>
+     <figure><img src="data:image/jpeg;base64,[base64 data stripped]" width="640" height="800" loading="lazy" alt="Moldeira em cera rosa — Plano Anatômico Oclusal"><figcaption>Rosa</figcaption></figure>
+    </div>
+    <div class="tx"><span class="eyebrow">Moldeira</span><h3>Plano Anatômico Oclusal</h3><p>Moldeira em formato anatômico para registro oclusal preciso. Superfície plana padronizada que facilita a montagem em articulador, garantindo repetibilidade e confiabilidade em cada procedimento.</p></div>
+   </article>
+   <article class="prod rv" style="transition-delay:.15s">
+    <div class="duo">
+     <figure><img src="data:image/jpeg;base64,[base64 data stripped]" width="640" height="800" loading="lazy" alt="Ferradura em cera branca — Plano de Orientação Padronizado"><figcaption>Branca</figcaption></figure>
+     <figure><img src="data:image/jpeg;base64,[base64 data stripped]" width="640" height="800" loading="lazy" alt="Ferradura em cera rosa — Plano de Orientação Padronizado"><figcaption>Rosa</figcaption></figure>
+    </div>
+    <div class="tx"><span class="eyebrow">Ferradura</span><h3>Plano de Orientação Padronizado</h3><p>Formato ferradura para orientação do plano oclusal. Bordas calibradas que oferecem uma referência estável para confecção de próteses totais e parciais removíveis.</p></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="s alt" id="diferenciais">
+ <div class="wrap">
+  <h2 class="title rv" style="margin-bottom:64px">Por que escolher <span class="cy">Ceras WS</span>?</h2>
+  <div class="grid4">
+   <div class="dif rv"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/></svg></div><h3>Precisão Dimensional</h3><p>Fabricação com tolerância milimétrica, garantindo encaixe perfeito e resultados consistentes.</p></div>
+   <div class="dif rv" style="transition-delay:.1s"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><h3>Material de Alta Qualidade</h3><p>Cera premium com estabilidade dimensional e textura otimizada para trabalho clínico.</p></div>
+   <div class="dif rv" style="transition-delay:.2s"><div class="ic"><svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 0 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-5.9-2.4L3.4 16a2 2 0 0 1 3.2-2.4L8 15"/></svg></div><h3>Facilidade de Uso</h3><p>Design ergonômico que simplifica o dia a dia do profissional e reduz o tempo de trabalho.</p></div>
+   <div class="dif rv" style="transition-delay:.3s"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22a10 10 0 1 1 10-10c0 3-2 4-4.5 4H15a2 2 0 0 0-1.5 3.3A1.7 1.7 0 0 1 12 22z"/><circle cx="7.5" cy="11" r="1"/><circle cx="12" cy="7" r="1"/><circle cx="16.5" cy="10" r="1"/></svg></div><h3>Disponível em 2 Cores</h3><p>Versões rosa e branca para atender diferentes preferências e aplicações clínicas.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="s" id="galeria">
+ <div class="wrap">
+  <h2 class="title rv" style="margin-bottom:64px"><span class="cy">Galeria</span></h2>
+  <div class="grid2 gal">
+   <button class="rv" data-full="data:image/jpeg;base64,[base64 data stripped]" aria-label="Ampliar foto: quatro ceras em pé"><img src="data:image/jpeg;base64,[base64 data stripped]" width="1100" height="1956" loading="lazy" alt="Quatro ceras odontológicas WS em pé — vista vertical mostrando Moldeira e Ferradura em rosa e branco"></button>
+   <button class="rv" style="transition-delay:.15s" data-full="data:image/jpeg;base64,[base64 data stripped]" aria-label="Ampliar foto: quatro ceras, duas cores"><img src="data:image/jpeg;base64,[base64 data stripped]" width="1100" height="1956" loading="lazy" alt="Quatro ceras odontológicas WS — Moldeira e Ferradura em rosa e branco"></button>
+  </div>
+ </div>
+</section>
+
+<section class="s alt cta">
+ <div class="wrap rv">
+  <h2>Pronto para elevar a qualidade<br class="d"> dos seus procedimentos?</h2>
+  <p>Converse com a nossa equipe e descubra como as Ceras WS podem transformar o seu fluxo de trabalho.</p>
+  <a class="btn" href="https://industriaprimavita.com.br/atendimento" target="_blank" rel="noopener noreferrer">Fale com um de nossos vendedores
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <p><b>Ceras WS</b> · Indústria Primavita</p>
+  <p>&copy; <span id="ano">2026</span> Todos os direitos reservados.</p>
+ </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><span aria-hidden="true">&times;</span><img id="lbimg" alt=""></div>
+
+<script>
+(function(){
+ document.getElementById('ano').textContent=new Date().getFullYear();
+ var els=document.querySelectorAll('.rv');
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -60px 0px',threshold:.08});
+  els.forEach(function(el){io.observe(el)});
+ }else{els.forEach(function(el){el.classList.add('in')})}
+ var lb=document.getElementById('lb'),li=document.getElementById('lbimg');
+ document.querySelectorAll('.gal button').forEach(function(b){
+  b.addEventListener('click',function(){li.src=b.getAttribute('data-full');li.alt=b.querySelector('img').alt;lb.classList.add('on')});
+ });
+ function close(){lb.classList.remove('on');li.removeAttribute('src')}
+ lb.addEventListener('click',close);
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
+</body>
+</html>
