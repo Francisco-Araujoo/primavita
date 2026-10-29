@@ -3,9 +3,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   background: #0a0e1a;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -15,34 +12,23 @@ html::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar {
 }
 
 .canva-embed {
-  --zoom: 0.7;   /* 0.5 = arte inteira, com faixas | 1 = preenche a tela, com corte */
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
+  position: relative;
+  width: 100%;
+  max-width: min(100%, 100dvh);  /* nunca fica mais alto que a tela */
+  aspect-ratio: 1 / 1;           /* proporção do design. 16:9 = 16 / 9 | 9:16 = 9 / 16 */
+  margin: 0 auto;
   overflow: hidden;
   background: #0a0e1a;
 }
 .canva-embed iframe {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  /* Desktop: arte inteira, sem corte */
-  width: min(100vw, 100dvh);
-  height: min(100vw, 100dvh);
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: calc(100% + 24px);      /* esconde a faixa branca da direita */
+  height: 100%;
   border: 0;
   margin: 0;
   padding: 0;
-}
-
-/* Celular: zoom intermediário */
-@media (max-width: 768px) {
-  .canva-embed iframe {
-    width: max(100vw, calc(100dvh * var(--zoom)));
-    height: max(100vw, calc(100dvh  var(--zoom)));
-  }
 }
 </style>
 
@@ -52,4 +38,4 @@ html::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar {
     allowfullscreen="allowfullscreen" allow="fullscreen">
   </iframe>
 </div>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAHZYCfypCg&#x2F;pdYxNkYPhH7Vay
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAHZYCfypCg&#x2F;pdYxNkYPhH7Vay4P7-RIgQ&#x2F;view?utm_content=DAHZYCfypCg&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"></a>
