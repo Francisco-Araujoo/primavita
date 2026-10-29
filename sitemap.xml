@@ -267,4 +267,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Cerasws -->
+  <url>
+    <loc>https://industriaprimavita.com.br/cerasws</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+
 </urlset>
