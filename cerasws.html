@@ -1,19 +1,7 @@
-/* Barra de rolagem escura para combinar com o site */
-html {
-  color-scheme: dark; /* Força o navegador a usar tema escuro na scrollbar nativa */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE e Edge legado */
 }
-
-/* Customização avançada para navegadores baseados em Webkit/Chrome/Edge */
 ::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0e1a; /* Mesmo fundo escuro do site */
-}
-::-webkit-scrollbar-thumb {
-  background: #1c2a42; /* Tom azul-escuro discreto */
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #00e5ff; /* Destaque em ciano ao passar o mouse */
+  display: none; /* Chrome, Safari e Edge */
 }
